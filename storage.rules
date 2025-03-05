@@ -1,0 +1,40 @@
+rules_version = '2';
+
+// Craft rules based on data in your Firestore database
+// allow write: if firestore.get(
+//    /databases/(default)/documents/users/$(request.auth.uid)).data.isAdmin;
+service firebase.storage {
+  match /b/{bucket}/o {
+    // For testing purposes only - allow all operations
+    // IMPORTANT: Change these rules before deploying to production
+    match /{allPaths=**} {
+      allow read, write: if true;
+    }
+    
+    // Uncomment these rules when ready for production
+    /*
+    // Default rule - deny all access
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+    
+    // User profile images
+    match /profileImages/{userId}/{fileName} {
+      // Allow users to read any profile image
+      allow read: if request.auth != null;
+      // Allow users to upload only their own profile images
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Pin images
+    match /pinImages/{pinId}/{fileName} {
+      // Allow authenticated users to read pin images
+      // More specific access control is handled in the app logic
+      allow read: if request.auth != null;
+      // Allow authenticated users to upload pin images
+      // The app will handle permission validation
+      allow write: if request.auth != null;
+    }
+    */
+  }
+}

@@ -1,0 +1,85 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // For testing purposes only - allow all operations
+    // IMPORTANT: Change these rules before deploying to production
+    match /{document=**} {
+      allow read, write: if true;
+    }
+    
+    // Uncomment these rules when ready for production and comment out the testing rules above
+    /*
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+    
+    function isFriend(userId) {
+      // Check if a friendship exists and is accepted
+      return exists(/databases/{database}/documents/friendships/$(request.auth.uid + "_" + userId)) && 
+             get(/databases/{database}/documents/friendships/$(request.auth.uid + "_" + userId)).data.status == "accepted";
+    }
+    
+    function canViewPin(pinData) {
+      // User can view pin if they are the creator or if they are in the visibleTo array
+      return isOwner(pinData.createdBy) || 
+             (pinData.visibleTo is list && pinData.visibleTo.hasAny([request.auth.uid]));
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Anyone can read basic user profiles
+      // Only the user can update their own profile
+      allow read: if isSignedIn();
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId);
+      allow delete: if isOwner(userId);
+    }
+    
+    // Friendships collection
+    match /friendships/{friendshipId} {
+      // Users can only read friendships they are part of
+      // Users can create friendship requests
+      // Only the users involved can update the friendship status
+      allow read: if isSignedIn() && 
+                  (friendshipId.matches(request.auth.uid + "_.*") || 
+                   friendshipId.matches(".*_" + request.auth.uid));
+      
+      allow create: if isSignedIn() && 
+                    (friendshipId == request.auth.uid + "_" + request.resource.data.user2Id || 
+                     friendshipId == request.resource.data.user1Id + "_" + request.auth.uid) &&
+                    (request.resource.data.requestedBy == request.auth.uid);
+      
+      allow update: if isSignedIn() && 
+                    (friendshipId.matches(request.auth.uid + "_.*") || 
+                     friendshipId.matches(".*_" + request.auth.uid));
+      
+      allow delete: if isSignedIn() && 
+                    (friendshipId.matches(request.auth.uid + "_.*") || 
+                     friendshipId.matches(".*_" + request.auth.uid));
+    }
+    
+    // LocationPins collection
+    match /locationPins/{pinId} {
+      // Users can read pins if they are the creator or if they are in the visibleTo array
+      // Only the creator can update or delete their pins
+      allow read: if isSignedIn() && canViewPin(resource.data);
+      
+      allow create: if isSignedIn() && 
+                    isOwner(request.resource.data.createdBy) && 
+                    request.resource.data.visibleTo is list;
+      
+      allow update: if isSignedIn() && 
+                    isOwner(resource.data.createdBy);
+      
+      allow delete: if isSignedIn() && 
+                    isOwner(resource.data.createdBy);
+    }
+    */
+  }
+}

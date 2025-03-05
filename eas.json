@@ -1,0 +1,82 @@
+{
+  "cli": {
+    "version": ">= 3.13.3",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_KEY": "AIzaSyBGwPfNp37OFUpK5XVVu3SLPpo0RuG5em8",
+        "EXPO_PUBLIC_AUTH_DOMAIN": "just-hangin-85f22.firebaseapp.com",
+        "EXPO_PUBLIC_PROJECT_ID": "just-hangin-85f22",
+        "EXPO_PUBLIC_STORAGE_BUCKET": "just-hangin-85f22.firebasestorage.app",
+        "EXPO_PUBLIC_MESSAGING_SENDER_ID": "96573142645",
+        "EXPO_PUBLIC_APP_ID": "1:96573142645:web:f76e3a42d9045543d26a3c",
+        "EXPO_PUBLIC_MEASUREMENT_ID": "G-HF84S4F29W"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "simulator": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "simulator": true
+      },
+      "env": {
+        "EXPO_PUBLIC_API_KEY": "AIzaSyBGwPfNp37OFUpK5XVVu3SLPpo0RuG5em8",
+        "EXPO_PUBLIC_AUTH_DOMAIN": "just-hangin-85f22.firebaseapp.com",
+        "EXPO_PUBLIC_PROJECT_ID": "just-hangin-85f22",
+        "EXPO_PUBLIC_STORAGE_BUCKET": "just-hangin-85f22.firebasestorage.app",
+        "EXPO_PUBLIC_MESSAGING_SENDER_ID": "96573142645",
+        "EXPO_PUBLIC_APP_ID": "1:96573142645:web:f76e3a42d9045543d26a3c",
+        "EXPO_PUBLIC_MEASUREMENT_ID": "G-HF84S4F29W"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_KEY": "AIzaSyBGwPfNp37OFUpK5XVVu3SLPpo0RuG5em8",
+        "EXPO_PUBLIC_AUTH_DOMAIN": "just-hangin-85f22.firebaseapp.com",
+        "EXPO_PUBLIC_PROJECT_ID": "just-hangin-85f22",
+        "EXPO_PUBLIC_STORAGE_BUCKET": "just-hangin-85f22.firebasestorage.app",
+        "EXPO_PUBLIC_MESSAGING_SENDER_ID": "96573142645",
+        "EXPO_PUBLIC_APP_ID": "1:96573142645:web:f76e3a42d9045543d26a3c",
+        "EXPO_PUBLIC_MEASUREMENT_ID": "G-HF84S4F29W"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_API_KEY": "AIzaSyBGwPfNp37OFUpK5XVVu3SLPpo0RuG5em8",
+        "EXPO_PUBLIC_AUTH_DOMAIN": "just-hangin-85f22.firebaseapp.com",
+        "EXPO_PUBLIC_PROJECT_ID": "just-hangin-85f22",
+        "EXPO_PUBLIC_STORAGE_BUCKET": "just-hangin-85f22.firebasestorage.app",
+        "EXPO_PUBLIC_MESSAGING_SENDER_ID": "96573142645",
+        "EXPO_PUBLIC_APP_ID": "1:96573142645:web:f76e3a42d9045543d26a3c",
+        "EXPO_PUBLIC_MEASUREMENT_ID": "G-HF84S4F29W"
+      },
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "resourceClass": "m-medium"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "appleId": "YOUR_APPLE_ID",
+        "ascAppId": "YOUR_APP_STORE_CONNECT_APP_ID",
+        "appleTeamId": "YOUR_APPLE_TEAM_ID"
+      }
+    }
+  }
+}

@@ -1,28 +1,98 @@
 {
   "expo": {
-    "name": "my-app",
-    "slug": "my-app",
+    "name": "Just Hangin",
+    "slug": "just-hangin",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "checkAutomatically": "ON_LOAD"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "js",
+        "jsx",
+        "ts",
+        "tsx",
+        "json"
+      ]
+    },
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.justhangin.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Just Hangin needs access to your location to show you on the map and allow you to create pins.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Just Hangin needs access to your location to show you on the map and allow you to create pins, even when the app is in the background.",
+        "NSLocationAlwaysUsageDescription": "Just Hangin needs access to your location to show you on the map and allow you to create pins.",
+        "UIBackgroundModes": [
+          "location",
+          "fetch",
+          "remote-notification"
+        ],
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "Just Hangin needs access to your camera to let you take profile pictures.",
+        "NSPhotoLibraryUsageDescription": "Just Hangin needs access to your photos to let you choose profile pictures.",
+        "NSUserTrackingUsageDescription": "This identifier will be used to deliver personalized ads to you."
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyDBjZso6BIPbKEXA0uf913LuMs2-dC9B-s",
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.justhangin.app",
+      "versionCode": 1,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "NOTIFICATIONS"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDBjZso6BIPbKEXA0uf913LuMs2-dC9B-s"
+        }
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Just Hangin to use your location."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#ffffff"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a7b3f0b7-72ae-44ee-8d1a-a5d03c3a6ce7"
+      },
+      "googleMapsApiKey": "AIzaSyDBjZso6BIPbKEXA0uf913LuMs2-dC9B-s"
     }
   }
 }
